@@ -154,13 +154,6 @@ Le système évalue les modèles avec :
 1. Modifier `generate_recommendations()` dans `recommender.py`
 2. Ajouter de nouvelles règles métier
 
-## 📝 Livrable
-
-Le projet génère automatiquement :
-- ✅ Code source complet
-- ✅ Application Streamlit déployable
-- ✅ Base de données traitée
-- ✅ Modèles entraînés et sauvegardés
 
 ## 🤝 Contribution
 
@@ -172,8 +165,9 @@ Pour contribuer au projet :
 
 ## 📧 Contact
 
-**Email de livraison :** kpatchaababa@gmail.com  
-**Date limite :** Samedi 28 juin 2025 à 23h59
+**Email  :** gpidjakare@gmail.com  
+**Telephone :** +22870356451
+
 
 ---
 
