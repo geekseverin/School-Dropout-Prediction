@@ -1,174 +1,171 @@
+# 🎓 School Dropout Prevention System
 
-# 🎓 Système de Prévention de l'Abandon Scolaire
+This project uses **Data Mining** techniques to predict and prevent school dropout in universities. It combines machine learning, clustering, and association rules to identify at-risk students and provide personalized recommendations.
 
-Ce projet utilise des techniques de **Data Mining** pour prédire et prévenir l'abandon scolaire dans les universités. Il combine l'apprentissage automatique, le clustering et les règles d'association pour identifier les étudiants à risque et proposer des recommandations personnalisées.
+## 📋 Features
 
-## 📋 Fonctionnalités
+### 🔍 Exploratory Analysis
+- Interactive visualizations of student data
+- Global statistics on school dropout
+- Correlation matrices and distribution plots
 
-### 🔍 Analyse Exploratoire
-- Visualisations interactives des données étudiantes
-- Statistiques globales sur l'abandon scolaire
-- Matrices de corrélation et graphiques de distribution
+### 🎯 Student Clustering
+- Identification of 4 student profiles using K-Means
+- Detailed analysis of each cluster
+- Specific recommendations per profile
 
-### 🎯 Clustering des Étudiants
-- Identification de 4 profils d'étudiants via K-Means
-- Analyse détaillée de chaque cluster
-- Recommandations spécifiques par profil
+### 🔮 Individual Prediction
+- Interactive interface to assess a student's risk
+- Real-time prediction with probabilities
+- Generation of personalized recommendations
 
-### 🔮 Prédiction Individuelle
-- Interface interactive pour évaluer le risque d'un étudiant
-- Prédiction en temps réel avec probabilités
-- Génération de recommandations personnalisées
+### 📊 Association Rules
+- Pattern extraction using Apriori algorithm
+- Identification of factors correlated with dropout
+- Decision-making support rules
 
-### 📊 Règles d'Association
-- Extraction de patterns avec l'algorithme Apriori
-- Identification des facteurs corrélés à l'abandon
-- Règles d'aide à la décision
+### 📥 Report Generation
+- Detailed PDF reports for each student
+- CSV export of data and recommendations
+- Complete documentation of results
 
-### 📥 Génération de Rapports
-- Rapports PDF détaillés pour chaque étudiant
-- Export CSV des données et recommandations
-- Documentation complète des résultats
+## 🚀 Installation and Usage
 
-## 🚀 Installation et Utilisation
-
-### Prérequis
+### Prerequisites
 ```bash
 Python 3.8+
 pip install -r requirements.txt
 ```
 
-### Structure du Projet
+### Project Structure
 ```
 ├── data/
-│   └── student_data.csv                 # Données des étudiants
+│   └── student_data.csv                 # Student data
 ├── models/
-│   ├── model.pkl                        # Modèle de prédiction entraîné
-│   └── clustering_model.pkl             # Modèle de clustering
+│   ├── model.pkl                        # Trained prediction model
+│   └── clustering_model.pkl             # Clustering model
 ├── utils/
-│   ├── preprocessing.py                 # Préparation des données
-│   ├── model_utils.py                   # Utilitaires ML
-│   ├── clustering.py                    # Fonctions de clustering
-│   └── recommender.py                   # Système de recommandations
+│   ├── preprocessing.py                 # Data preparation
+│   ├── model_utils.py                   # ML utilities
+│   ├── clustering.py                    # Clustering functions
+│   └── recommender.py                   # Recommendation system
 ├── app/
-│   ├── orchestration.py                 # Pipeline d'entraînement
-│   └── main.py                          # Application Streamlit
-├── requirements.txt                     # Dépendances
+│   ├── orchestration.py                 # Training pipeline
+│   └── main.py                          # Streamlit application
+├── requirements.txt                     # Dependencies
 └── README.md
 ```
 
-### Étapes d'Exécution
+### Execution Steps
 
-1. **Placer les données**
+1. **Place the data**
 ```bash
-# Copier votre fichier student_data.csv dans le dossier data/
+# Copy your student_data.csv file to the data/ folder
 cp student_data.csv data/
 ```
 
-2. **Entraîner les modèles**
+2. **Train the models**
 ```bash
 python app/orchestration.py
 ```
 
-3. **Lancer l'application**
+3. **Launch the application**
 ```bash
 streamlit run app/main.py
 ```
 
-4. **Accéder au dashboard**
+4. **Access the dashboard**
 ```
 http://localhost:8501
 ```
 
-## 🔧 Technologies Utilisées
+## 🔧 Technologies Used
 
 ### Machine Learning
-- **Scikit-learn** : Classification (Random Forest, XGBoost)
-- **K-Means** : Clustering des profils étudiants
-- **Apriori** : Extraction de règles d'association
+- **Scikit-learn**: Classification (Random Forest, XGBoost)
+- **K-Means**: Student profile clustering
+- **Apriori**: Association rules extraction
 
-### Visualisation
-- **Streamlit** : Interface web interactive
-- **Plotly** : Graphiques interactifs
-- **Seaborn/Matplotlib** : Visualisations statistiques
+### Visualization
+- **Streamlit**: Interactive web interface
+- **Plotly**: Interactive charts
+- **Seaborn/Matplotlib**: Statistical visualizations
 
-### Génération de Rapports
-- **ReportLab** : Génération de PDF
-- **Pandas** : Export CSV
+### Report Generation
+- **ReportLab**: PDF generation
+- **Pandas**: CSV export
 
-## 📊 Données d'Entrée
+## 📊 Input Data
 
-Le système utilise les variables suivantes :
+The system uses the following variables:
 
 | Variable | Type | Description |
 |----------|------|-------------|
-| `age` | Numérique | Âge de l'étudiant |
-| `gender` | Catégorielle | Genre (Male/Female) |
-| `region` | Catégorielle | Région d'origine |
-| `parent_education` | Catégorielle | Niveau d'éducation des parents |
-| `average_grade` | Numérique | Note moyenne (0-20) |
-| `absenteeism_rate` | Numérique | Taux d'absentéisme (%) |
-| `assignments_submitted` | Numérique | Pourcentage de devoirs rendus |
-| `moodle_hours` | Numérique | Heures passées sur la plateforme |
-| `forum_posts` | Numérique | Nombre de posts sur le forum |
-| `satisfaction_score` | Numérique | Score de satisfaction (1-10) |
-| `dropout` | Catégorielle | Statut d'abandon (Yes/No) |
+| `age` | Numeric | Student's age |
+| `gender` | Categorical | Gender (Male/Female) |
+| `region` | Categorical | Region of origin |
+| `parent_education` | Categorical | Parents' education level |
+| `average_grade` | Numeric | Average grade (0-20) |
+| `absenteeism_rate` | Numeric | Absenteeism rate (%) |
+| `assignments_submitted` | Numeric | Percentage of assignments submitted |
+| `moodle_hours` | Numeric | Hours spent on platform |
+| `forum_posts` | Numeric | Number of forum posts |
+| `satisfaction_score` | Numeric | Satisfaction score (1-10) |
+| `dropout` | Categorical | Dropout status (Yes/No) |
 
-## 🎯 Profils d'Étudiants Identifiés
+## 🎯 Identified Student Profiles
 
-### 🔴 Cluster 0 : Étudiants à Risque Élevé
-- Notes faibles, absentéisme élevé
-- **Recommandations** : Suivi renforcé, tutorat personnalisé
+### 🔴 Cluster 0: High-Risk Students
+- Low grades, high absenteeism
+- **Recommendations**: Enhanced monitoring, personalized tutoring
 
-### 🟡 Cluster 1 : Étudiants Moyens
-- Performance modérée, engagement variable
-- **Recommandations** : Encouragement, amélioration des méthodes
+### 🟡 Cluster 1: Average Students
+- Moderate performance, variable engagement
+- **Recommendations**: Encouragement, method improvement
 
-### 🟢 Cluster 2 : Étudiants Performants
-- Bonnes notes, engagement élevé
-- **Recommandations** : Maintien de l'excellence, mentorat
+### 🟢 Cluster 2: High-Performing Students
+- Good grades, high engagement
+- **Recommendations**: Excellence maintenance, mentoring
 
-### 🟠 Cluster 3 : Étudiants Désengagés
-- Faible participation, satisfaction médiocre
-- **Recommandations** : Remotivation, conseil d'orientation
+### 🟠 Cluster 3: Disengaged Students
+- Low participation, mediocre satisfaction
+- **Recommendations**: Remotivation, career counseling
 
-## 📈 Métriques de Performance
+## 📈 Performance Metrics
 
-Le système évalue les modèles avec :
-- **Accuracy** : Précision globale de la prédiction
-- **Silhouette Score** : Qualité du clustering
-- **Confidence/Support** : Fiabilité des règles d'association
+The system evaluates models with:
+- **Accuracy**: Overall prediction accuracy
+- **Silhouette Score**: Clustering quality
+- **Confidence/Support**: Association rules reliability
 
-## 🛠️ Personnalisation
+## 🛠️ Customization
 
-### Ajouter de Nouvelles Variables
-1. Modifier `utils/preprocessing.py`
-2. Mettre à jour `get_feature_names()`
-3. Réentraîner avec `orchestration.py`
+### Adding New Variables
+1. Modify `utils/preprocessing.py`
+2. Update `get_feature_names()`
+3. Retrain with `orchestration.py`
 
-### Modifier les Clusters
-1. Ajuster `n_clusters` dans `clustering.py`
-2. Mettre à jour `get_cluster_profiles()`
+### Modifying Clusters
+1. Adjust `n_clusters` in `clustering.py`
+2. Update `get_cluster_profiles()`
 
-### Personnaliser les Recommandations
-1. Modifier `generate_recommendations()` dans `recommender.py`
-2. Ajouter de nouvelles règles métier
+### Customizing Recommendations
+1. Modify `generate_recommendations()` in `recommender.py`
+2. Add new business rules
 
+## 🤝 Contributing
 
-## 🤝 Contribution
-
-Pour contribuer au projet :
-1. Fork le repository
-2. Créer une branche feature
-3. Commit les modifications
-4. Ouvrir une Pull Request
+To contribute to the project:
+1. Fork the repository
+2. Create a feature branch
+3. Commit changes
+4. Open a Pull Request
 
 ## 📧 Contact
 
-**Email  :** gpidjakare@gmail.com  
-**Telephone :** +22870356451
-
+**Email:** gpidjakare@gmail.com  
+**Phone:** +22870356451
 
 ---
 
-*Développé avec ❤️ pour la prévention de l'abandon scolaire*
+*Developed with ❤️ for school dropout prevention*
